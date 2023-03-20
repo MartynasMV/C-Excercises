@@ -23,7 +23,9 @@ Question 1 is from Level 1
   - rotone
   - search_and_replace
   - ulstr 
+  
 Question 2 is from Level 2
+
   - alpha_mirror
   - camel_to_snake
   - do_op
@@ -44,7 +46,9 @@ Question 2 is from Level 2
   - swap_bits
   - union
   - wdmatch 
+  
 Question 3 is from Level 3
+
   - add_prime_sum
   - epur_str
   - expand_str
@@ -60,7 +64,9 @@ Question 3 is from Level 3
   - rstr_capitalizer
   - str_capitalizer
   - tab_mult 
+  
 Question 4 is from Level 4
+
   - flood_fill
   - fprime
   - ft_itoa
@@ -72,7 +78,9 @@ Question 4 is from Level 4
   - sort_int_tab
   - sort_list
 
+
 Exam Login Details
+
 login -> exam
 password -> exam
 Type examshell in terminal
@@ -107,12 +115,8 @@ git push
 
 After you git push, type grademe in the examshell for your project to be submitted.
 
-
 Exam IDE
 You should be able to use both VSCode and Vim in the exam.
-
-My Skills
-
 
 Exam Practice
 Practice the exam just like you would in the real exam using this tool - https://github.com/JCluzet/42_EXAM
