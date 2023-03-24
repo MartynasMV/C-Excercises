@@ -11,6 +11,7 @@ character.
 Your function must be declared as follows:
 
 void	ft_putstr(char *str); */
+
 #include <unistd.h>
 
 void	ft_putstr(char *str)
