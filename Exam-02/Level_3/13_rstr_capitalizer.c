@@ -58,7 +58,7 @@ int	main(int ac, char **av)
 		while (av[i])
 		{
 			capitalizer(av[i]);
-            ft_putchar(' ');
+           // ft_putchar(' ');
 			i++;
 		}
 	}

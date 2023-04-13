@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   1_alpha_mirror.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvoldema <mvoldema@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/03 10:34:48 by mvoldema          #+#    #+#             */
+/*   Updated: 2023/04/05 11:38:20 by mvoldema         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /*
 Assignment name  : alpha_mirror
 Expected files   : alpha_mirror.c
@@ -28,13 +40,6 @@ $
 $> */
 #include <unistd.h>
 
-void	putnb(int num)
-{
-	if (num > 9)
-		putnb(num / 10);
-	num = num % 10 + '0';
-	write(1, &num, 1);
-}
 void	putchar(char c)
 {
 	write(1, &c, 1);

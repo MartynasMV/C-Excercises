@@ -48,8 +48,8 @@ int	*ft_rrange(int start, int end)
 		array = malloc(sizeof(int) * len);
 		while (i < len)
 		{
-			array[i] = start;
-			start++;
+			array[i] = end;
+			end++;
 			i++;
 		}
 	}

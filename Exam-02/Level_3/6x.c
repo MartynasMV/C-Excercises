@@ -1,5 +1,4 @@
-/*
-Assignment name  : ft_range
+/* Assignment name  : ft_range
 Expected files   : ft_range.c
 Allowed functions: malloc
 --------------------------------------------------------------------------------
@@ -18,18 +17,16 @@ Examples:
 - With (-1, 2) you will return an array containing -1, 0, 1 and 2.
 - With (0, 0) you will return an array containing 0.
 - With (0, -3) you will return an array containing 0, -1, -2 and -3. */
-
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
+#include <stdio.h>
 
 int	*ft_range(int start, int end)
 {
 	int	*array;
-	int	i;
 	int	len;
+	int	i;
 
+	len = 0;
 	i = 0;
 	if (start < end)
 	{
@@ -44,38 +41,27 @@ int	*ft_range(int start, int end)
 	}
 	else
 	{
+        i=0;
 		len = start - end + 1;
 		array = malloc(sizeof(int) * len);
-		i = 0;
 		while (i <= len)
 		{
 			array[i] = start;
-			start--;
 			i++;
+			start--;
 		}
 	}
 	return (array);
 }
 
-int	main(void)
+int main()
 {
-	int	*res;
-	int	i;
-	int	first;
-	int	second;
-	int	size;
-
-	first = 1;
-	second = 3;
-	if (second > first)
-		size = (second - first) + 1;
-	else
-		size = (first - second) + 1;
-	i = 0;
-	res = ft_range(first, second);
-	while (i < size)
-	{
-		printf("%i, ", res[i]);
-		i++;
-	}
+    int i=0;
+    int *res;
+    res = ft_range(3,1);
+    while(i<3)
+    {
+        printf("%i", res[i]);
+        i++;
+    }
 }

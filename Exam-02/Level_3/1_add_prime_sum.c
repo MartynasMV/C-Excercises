@@ -25,33 +25,37 @@ $> */
 
 void	ft_putnumber(int n)
 {
-	char	c;
-
+	//unsigned char c;
 	if (n > 9)
 		ft_putnumber(n / 10);
-	c = n % 10 + '0';
-	write(1, &c, 1);
+	n = n % 10 + '0';
+	write(1, &n, 1);
 }
 
 int	ft_atoi(char *s1)
 {
 	int	i;
 	int	result;
+	int sign = 1;
 
 	i = 0;
 	result = 0;
 	while (s1 && (s1[i] == ' ' || (s1[i] >= 9 && s1[i] <= 13)))
 		i++;
 	if (s1[i] == '-' || s1[i] == '+')
-	{
-		i++;
-	}
+		{
+			i++;
+			if(s1[i] == '-')
+			{
+				sign = -1;
+			}
+		}
 	while (s1 && (s1[i] >= '0' && s1[i] <= '9'))
 	{
 		result += result * 10 + s1[i] - '0';
 		i++;
 	}
-	return (result); //no need to use sign 1 as integers are only positive
+	return (result * sign); //no need to use sign 1 as integers are only positive
 }
 
 int	ft_prime(int nbr)
@@ -74,9 +78,9 @@ int	main(int ac, char **av)
 {
 	if (ac == 2)
 	{
-		int nbr = ft_atoi(av[1]);
-		int i = 2;
-		int sum = 0;
+		unsigned int nbr = ft_atoi(av[1]);
+		unsigned int i = 2;
+		unsigned int sum = 0;
 		while (i <= nbr)
 		{
 			if (ft_prime(i) == 1)

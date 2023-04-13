@@ -41,14 +41,14 @@ void	inter(char *s1, char *s2)
 	j = 0;
 	while (s2 && s2[j])
 	{
-		table[s2[j]] = 1;
+		table[(unsigned char)s2[j]] = 1;
 		j++;
 	}
 	while (s1[i])
 	{
-		if (table[s1[i]] == 1)
+		if (table[(unsigned char)s1[i]] == 1)
 		{
-			table[s1[i]] = 0;
+			table[(unsigned char)s1[i]] = 0;
 			ft_putchar(s1[i]);
 		}
 		i++;

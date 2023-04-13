@@ -38,7 +38,6 @@ void	ftputchar(char c)
 }
 int	main(int ac, char **av)
 {
-	int i = 0;
 	int unit_1;
 	int unit_2;
 	if (ac == 4)

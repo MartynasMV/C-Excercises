@@ -61,7 +61,7 @@ int	main(void)
 	unsigned char bit;
 	print_bits(5);
 	ft_putchar('\n');
-	bit = x_reverse_bits(5);
+	bit = reverse_bits(5);
 	print_bits(bit);
 	ft_putchar('\n');
 }

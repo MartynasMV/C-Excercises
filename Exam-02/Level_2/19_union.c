@@ -42,9 +42,9 @@ void	ft_union(char *s1, char *s2)
 	i = 0;
 	while (s1 && s1[i])
 	{
-		if (table[s1[i]] == 0)
+		if (table[(unsigned char)s1[i]] == 0)
 		{
-			table[s1[i]] = 1;
+			table[(unsigned char)s1[i]] = 1;
 			write(1, &s1[i], 1);
 		}
 		i++;
@@ -52,9 +52,9 @@ void	ft_union(char *s1, char *s2)
 	i = 0;
 	while (s2 && s2[i])
 	{
-		if (table[s2[i]] == 0)
+		if (table[(unsigned char)s2[i]] == 0)
 		{
-			table[s2[i]] = 1;
+			table[(unsigned char)s2[i]] = 1;
 			write(1, &s2[i], 1);
 		}
 		i++;

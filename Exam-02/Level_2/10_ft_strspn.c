@@ -22,29 +22,30 @@ The strspn() function returns the number of bytes in the initial segment of s wh
 #include <string.h>
 #include <unistd.h>
 
-size_t	ft_strspn(const char *s, const char *accept)
+int modified_ft_strchr(const char *s, int c )
 {
-	int	i;
-	int	j;
-	int	x;
-
-	i = 0;
-	x = 0;
+	int i = 0;
 	while (s[i])
 	{
-		j = 0;
-		while (accept[j])
-		{
-			if (accept[j] == s[i])
-			{
-				x++;
-				break ;
-			}
-			j++;
-		}
+		if(c == s[i])
+			return 1;
+			//original would return((char*)&s[i]);
 		i++;
 	}
-	return (x);
+	return(0);
+}
+
+size_t	ft_strspn(const char *s, const char *accept)
+{
+	size_t i = 0;
+
+	while (s[i])
+	{
+		if(modified_ft_strchr(accept, s[i]) == 0)
+			break;
+		i++;
+	}
+	return(i);
 }
 
 int main(int ac, char **av )

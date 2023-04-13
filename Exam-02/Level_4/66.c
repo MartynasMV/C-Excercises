@@ -1,32 +1,22 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+#include <stdio.h>
 
-char	*ft_strncpy(char *dest, char *src, int n)
+char *ft_strncpy(char *s1, char *s2, int n)
 {
-	int	i;
+	int i = -1;
 
-	i = 0;
-	while (i < n && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	while (++i < n && s2[i])
+		s1[i] = s2[i];
+	s1[i] = '\0';
+	return (s1);
 }
+
 char	**ft_split(char *str)
 {
-	int		i;
-	int		j;
-	int		k;
-	int		wc;
-	char	**out;
-
-	i = 0;
-	j = 0;
-	k = 0;
-	wc = 0;
+	int i = 0;
+	int j = 0;
+	int k = 0;
+	int wc = 0;
 	while (str[i])
 	{
 		while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
@@ -36,8 +26,7 @@ char	**ft_split(char *str)
 		while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
 			i++;
 	}
-	out = (char **)malloc(sizeof(char *) * (wc + 1));
-
+	char **out = (char **)malloc(sizeof(char *) * (wc + 1));
 	i = 0;
 	while (str[i])
 	{
@@ -49,7 +38,7 @@ char	**ft_split(char *str)
 		if (i > j)
 		{
 			out[k] = (char *)malloc(sizeof(char) * ((i - j) + 1));
-			ft_strncpy(out[k++], &str[j], (i - j));
+			ft_strncpy(out[k++], &str[j], i - j);
 		}
 	}
 	out[k] = NULL;
@@ -59,9 +48,10 @@ char	**ft_split(char *str)
 int	main(int ac, char **av)
 {
 	char **double_arr;
-	double_arr = ft_split(av[1]);
 	int i = 0;
 	int j = 0;
+	double_arr = ft_split(av[1]);
+
 	(void)ac;
 	while (double_arr[i])
 	{
@@ -71,8 +61,7 @@ int	main(int ac, char **av)
 			printf("%c", double_arr[i][j]);
 			j++;
 		}
-        printf("\n");
+		printf("\n");
 		i++;
 	}
 }
-

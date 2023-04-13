@@ -30,16 +30,16 @@ void ft_putchar(char c)
     write(1,&c,1);
 }
 
-int ft_strlen(char *str)
+/* int ft_strlen(char *str)
 {   
     int i= 0;
     while(str && str[i])
         i++;
     return(i);
-}
+} */
 int main(int ac, char **av)
 {
-    int len;
+    //int len;
     int i = 0;
     //len = ft_strlen(av[1]);
     if(ac==2)
