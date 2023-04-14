@@ -12,25 +12,25 @@ lines, or by the start/end of the string.
 
 Your function must be declared as follows:
 
-char    **ft_split(char *str); */
+char	**ft_split(char *str); */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 
-char	*ft_strncpy(char *dest, char *src, int n)
+char	*ft_strncpy(char *dst, char *src, int n)
 {
 	int	i;
 
 	i = 0;
 	while (i < n && src[i])
 	{
-		dest[i] = src[i];
+		dst[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	dst[i] = '\0';
+	return (dst);
 }
+
 char	**ft_split(char *str)
 {
 	int		i;
@@ -45,22 +45,25 @@ char	**ft_split(char *str)
 	wc = 0;
 	while (str[i])
 	{
-		while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
+		while (str[i] && (str[i] == ' ' || str[i] == '\n' || str[i] == '\n'))
+		{
 			i++;
+		}
 		if (str[i])
 			wc++;
-		while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
+		while (str[i] && (str[i] != ' ' && str[i] != '\n' && str[i] != '\n'))
+		{
 			i++;
+		}
 	}
 	out = (char **)malloc(sizeof(char *) * (wc + 1));
-
 	i = 0;
 	while (str[i])
 	{
-		while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
+		while (str[i] && (str[i] == ' ' || str[i] == '\n' || str[i] == '\n'))
 			i++;
 		j = i;
-		while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
+		while (str[i] && (str[i] != ' ' && str[i] != '\n' && str[i] != '\n'))
 			i++;
 		if (i > j)
 		{
@@ -74,21 +77,20 @@ char	**ft_split(char *str)
 
 int	main(int ac, char **av)
 {
-	char **double_arr;
-	double_arr = ft_split(av[1]);
 	int i = 0;
 	int j = 0;
 	(void)ac;
-	while (double_arr[i])
+	char **double_array;
+	double_array = ft_split(av[1]);
+	while (double_array[i])
 	{
 		j = 0;
-		while (double_arr[i][j])
+		while (double_array[i][j])
 		{
-			printf("%c", double_arr[i][j]);
+			printf("%c", double_array[i][j]);
 			j++;
 		}
-        printf("\n");
+		printf("\n");
 		i++;
 	}
 }
-

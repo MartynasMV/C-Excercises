@@ -17,37 +17,46 @@ string.
 
 Your function must be declared as follows:
 
-int	ft_atoi_base(const char *str, int str_base); */
+int	ft_atoi_base(const char *str, unsigned int str_base); */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_atoi_base(const char *str, int str_base)
+int	ft_atoi_base(const char *nbr, unsigned int base)
 {
-	int	idx;
-	int	sign;
+	int	i;
 	int	result;
+	int	number;
+	int	sign;
 
-	idx = 0;
-	sign = 1;
+	i = 0; 
 	result = 0;
-	if (str[idx] == '-')
+	sign = 1;
+
+	if(nbr[i] == '-')
 	{
 		sign = -1;
-		idx++;
+		i++;
 	}
-	while (str[idx])
+
+	while(nbr[i])
 	{
-		result *= str_base;
-		if (str[idx] >= '0' && str[idx] <= '9')
-			result += str[idx] - '0';
-		else if (str[idx] >= 'A' && str[idx] <= 'Z')
-			result += str[idx] - '7';
-		else if (str[idx] >= 'a' && str[idx] <= 'z')
-			result += str[idx] - 'W';
-		idx++;
+		if(nbr[i] >= '0' && nbr[i] <= '9')
+			number = nbr[i] - '0';
+		else if(nbr[i] >= 'A' && nbr[i] <= 'F')
+			number= nbr[i] - '7';
+		else if(nbr[i] >= 'a' && nbr[i] <= 'f')
+			number= nbr[i] - 'W';
+		else
+			break;
+		if(number >= base)
+			break;
+
+		result *= base;
+		result += number;
+		i++;
 	}
-	return (result * sign);
+	return(result * sign);
 }
 
 int	main(int argc, char **argv)
