@@ -1,4 +1,5 @@
-/* Assignment name  : wdmatch
+/* 
+Assignment name  : wdmatch
 Expected files   : wdmatch.c
 Allowed functions: write
 --------------------------------------------------------------------------------
@@ -56,7 +57,6 @@ void	wdmatch(char *s1, char *s2)
 			i++;
 		}
 	}
-	ft_putchar('\n');
 }
 int	main(int ac, char **av)
 
@@ -65,5 +65,5 @@ int	main(int ac, char **av)
 	{
 		wdmatch(av[1], av[2]);
 	}
-	//putchar('\n');
+	putchar('\n');
 }

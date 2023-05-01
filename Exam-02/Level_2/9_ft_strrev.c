@@ -32,7 +32,7 @@ char	*ft_strrev(char *str)
 
 	i = 0;
 	j = ft_strlen(str) - 1;
-	while (i < j)
+	while (str && i < j)
 	{
 		temp = str[i];
 		str[i] = str[j];

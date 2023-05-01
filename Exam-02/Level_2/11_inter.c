@@ -62,6 +62,3 @@ int	main(int ac, char **av)
 		inter(av[1], av[2]);
 	}
 }
-
-// a "padinton" "paqefwtdjetyiytjneytjoeyjnejeyj" | cat -e
-// a "rien" "cette phrase ne cache rien" | cat -e

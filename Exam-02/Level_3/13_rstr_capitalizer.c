@@ -43,7 +43,7 @@ void	capitalizer(char *s)
 	{
 		if ((s[i] >= 'a' && s[i] <= 'z') && (s[i + 1] == ' ' || s[i + 1] == '\t' || s[i + 1] == '\0'))
 			s[i] -= 32;
-		else if ((s[i] >= 'A' && s[i] <= 'Z') && (s[i + 1] != ' ' || s[i + 1] != '\t' || s[i + 1] != '\0'))
+		else if ((s[i] >= 'A' && s[i] <= 'Z') && (s[i + 1] != ' ' && s[i + 1] != '\t' && s[i + 1] != '\0'))
 			s[i] += 32;
 		ft_putchar(s[i]);
         i++;
